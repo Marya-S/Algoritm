@@ -22,6 +22,7 @@ public class StringListRealisation implements StringList {
 
     @Override
     public String add(String item) {
+        if(item != null){
         if (list.length == size) {
             size++;
             String[] newList = new String[size];
@@ -32,6 +33,9 @@ public class StringListRealisation implements StringList {
             list = newList;
         }
         return item;
+    }
+        IndexOfBoundException exception = new IndexOfBoundException("Массив не может быть 0");
+        return null;
     }
 
     @Override
